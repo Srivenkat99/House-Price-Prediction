@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <head>
+    <title>House Price Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+    <title>House Price Prediction</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>House Price Prediction</h1>
+        <p>Predict California House Prices using Machine Learning</p>
+
+<form action="/predict" method="POST">
+
+    <label>Median Income</label><br>
+    <input type="number" name="MedInc" step="any" required><br><br>
+
+    <label>House Age</label><br>
+    <input type="number" name="HouseAge" step="any" required><br><br>
+
+    <label>Average Rooms</label><br>
+    <input type="number" name="AveRooms" step="any" required><br><br>
+
+    <label>Average Bedrooms</label><br>
+    <input type="number" name="AveBedrms" step="any" required><br><br>
+
+    <label>Population</label><br>
+    <input type="number" name="Population" step="any" required><br><br>
+
+    <label>Average Occupancy</label><br>
+    <input type="number" name="AveOccup" step="any" required><br><br>
+
+    <label>Latitude</label><br>
+    <input type="number" name="Latitude" step="any" required><br><br>
+
+    <label>Longitude</label><br>
+    <input type="number" name="Longitude" step="any" required><br><br>
+
+    <input type="submit" value="Predict Price">
+
+</form>
+        {% if prediction_text %}
+
+            <div class="result">
+                <h2>{{ prediction_text }}</h2>
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
